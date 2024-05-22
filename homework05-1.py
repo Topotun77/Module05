@@ -16,7 +16,9 @@
 class House:
     def __init__(self):
         """  Инициализация объекта класса  """
+        from random import choice
         self.totalFloors = 16           # Всего этажей в доме
+        self.type = choice(['кирпичный', 'панельный', 'соломенный', 'бревенчатый'])
 
     def go(self, floors_):
         """  Перемещение лифта  """
@@ -27,6 +29,7 @@ class House:
 
 my_house = House()
 my_house.numberOfFloors = 10            # Текущий этаж
+print(my_house.__dict__)
 
 print('Всего этажей в моем доме:', my_house.totalFloors)
 
