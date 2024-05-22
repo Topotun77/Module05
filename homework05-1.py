@@ -16,20 +16,22 @@
 class House:
     def __init__(self):
         """  Инициализация объекта класса  """
-        self.numberOfFloors = 10
+        self.totalFloors = 16           # Всего этажей в доме
 
     def go(self, floors_):
         """  Перемещение лифта  """
-        attr_name = 'currentFloors'
+        attr_name = 'numberOfFloors'
         setattr(self, attr_name, floors_)
-        # self.currentFloors = floors_
+        # self.numberOfFloors = floors_
 
 
 my_house = House()
-print('Всего этажей в моем доме:', my_house.numberOfFloors)
+my_house.numberOfFloors = 10            # Текущий этаж
 
-for floors in range(0, my_house.numberOfFloors + 1, 2):
+print('Всего этажей в моем доме:', my_house.totalFloors)
+
+for floors in range(my_house.numberOfFloors, 0, -1):
     my_house.go(floors)
-    print(f'Текущий этаж равен: {my_house.currentFloors}')
+    print(f'Текущий этаж равен: {my_house.numberOfFloors}')
 
 
