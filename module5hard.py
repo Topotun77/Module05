@@ -234,7 +234,7 @@ class UrTube:
 
         print(Fore.CYAN + f'\nПросмотр видео "{Style.BRIGHT + video + Style.NORMAL}" начался:')
         for i in range(self.videos[bool_ - 1].time_now, self.videos[bool_ - 1].duration + 1):
-            print(i, end=' ')
+            print(i, end=' ', flush=True)
             # sleep(1)
             if time_out() != None:
                 print('Воспроизведение прервано ' + Style.RESET_ALL)
